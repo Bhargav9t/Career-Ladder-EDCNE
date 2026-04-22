@@ -73,6 +73,24 @@ Run the main scraper:
 python main.py
 ```
 
+## Deployment
+
+### Deploying the Frontend (Vercel)
+The `frontend` folder is pre-configured for Vercel deployment with a `vercel.json` file for proper routing.
+1. Create a [Vercel](https://vercel.com/) account and connect your GitHub repo.
+2. Select the `frontend` directory as your **Root Directory**.
+3. Vercel will automatically detect Vite. 
+4. Add your Environment Variables (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_GROQ_API_KEY`).
+5. Deploy!
+
+### Deploying the Backend Scraper (Render or Heroku)
+The backend scraper is designed to run continuously as a background worker. A `Procfile` is included at the root.
+1. Connect your GitHub repo to Render (as a Background Worker) or Heroku.
+2. Ensure you are building from the root directory.
+3. Build Command: `pip install -r requirements.txt`
+4. Start Command: `python main.py` (or let the platform use the `Procfile`).
+5. Add your Environment Variables (`SUPABASE_URL`, `SUPABASE_KEY`).
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
