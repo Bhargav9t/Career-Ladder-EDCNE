@@ -24,9 +24,14 @@ def main():
     
     scrapers_config = [
         (DevpostScraper(), "https://devpost.com/hackathons"),
+        (DevpostScraper(), "https://devpost.com/hackathons?page=2"),
+        (DevpostScraper(), "https://devpost.com/hackathons?page=3"),
         (UnstopScraper(), "https://unstop.com/hackathons"),
+        (UnstopScraper(), "https://unstop.com/hackathons?page=2"),
         (LinkedInScraper(), "https://www.linkedin.com/jobs/search/?keywords=software%20engineer"),
-        (ResearchScraper(), "https://www.nsf.gov/crssprgm/reu/list_result.jsp?unitid=5049")
+        (ResearchScraper(), "https://www.nsf.gov/crssprgm/reu/list_result.jsp?unitid=5049"),
+        (ResearchScraper(), "https://www.nsf.gov/crssprgm/reu/list_result.jsp?unitid=5048"),
+        (ResearchScraper(), "https://www.nsf.gov/crssprgm/reu/list_result.jsp?unitid=5052")
     ]
     
     all_opportunities = []

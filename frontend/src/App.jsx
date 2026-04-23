@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import Dashboard from './components/Dashboard';
 import AICoach from './components/AICoach';
 import MyLadder from './components/MyLadder';
+import CareerProgressionBoard from './components/CareerProgressionBoard';
 
 export default function App() {
   const [session, setSession] = useState(null);
@@ -91,6 +92,9 @@ export default function App() {
       )}
       {currentView === 'myladder' && (
         <MyLadder session={session} />
+      )}
+      {currentView === 'careerprogression' && (
+        <CareerProgressionBoard session={session} />
       )}
     </Layout>
   );
