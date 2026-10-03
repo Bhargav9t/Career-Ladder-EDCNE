@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-arcade-bg: #050505;
+    --color-arcade-cyan: #00f0ff;
+    --color-arcade-magenta: #ff007f;
+    --color-arcade-yellow: #ffe600;
+    --color-arcade-green: #00ff66;
+    --color-arcade-red: #ff3333;
+    --color-arcade-white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #050505;
+    color: #e2e8f0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #050505;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Authentic 8-bit Pixel Typography */
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+  letter-spacing: -0.5px;
+}
+
+.font-pixel-sub {
+  font-family: 'Silkscreen', 'VT323', monospace;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', 'VT323', monospace;
+}
+
+/* Pixel Art Rendering Enforcement */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Retro Arcade Cabinet Bezel / Border */
+.arcade-box {
+  background: #0a0a0f;
+  border: 4px solid #ffffff;
+  box-shadow: 
+    inset -4px -4px 0px 0px rgba(0, 0, 0, 0.6),
+    inset 4px 4px 0px 0px rgba(255, 255, 255, 0.2),
+    0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.arcade-box-cyan {
+  background: #080d14;
+  border: 4px solid #00f0ff;
+  box-shadow: 
+    inset -4px -4px 0px 0px rgba(0, 0, 0, 0.7),
+    inset 4px 4px 0px 0px rgba(0, 240, 255, 0.4),
+    0 0 16px rgba(0, 240, 255, 0.35);
+}
+
+.arcade-box-magenta {
+  background: #140810;
+  border: 4px solid #ff007f;
+  box-shadow: 
+    inset -4px -4px 0px 0px rgba(0, 0, 0, 0.7),
+    inset 4px 4px 0px 0px rgba(255, 0, 127, 0.4),
+    0 0 16px rgba(255, 0, 127, 0.35);
+}
+
+.arcade-box-yellow {
+  background: #141208;
+  border: 4px solid #ffe600;
+  box-shadow: 
+    inset -4px -4px 0px 0px rgba(0, 0, 0, 0.7),
+    inset 4px 4px 0px 0px rgba(255, 230, 0, 0.4),
+    0 0 16px rgba(255, 230, 0, 0.35);
+}
+
+.arcade-box-green {
+  background: #08140c;
+  border: 4px solid #00ff66;
+  box-shadow: 
+    inset -4px -4px 0px 0px rgba(0, 0, 0, 0.7),
+    inset 4px 4px 0px 0px rgba(0, 255, 102, 0.4),
+    0 0 16px rgba(0, 255, 102, 0.35);
+}
+
+/* Arcade Pixel Button */
+.arcade-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  border: 3px solid #ffffff;
+  padding: 10px 16px;
+  background: #111111;
+  color: #ffffff;
+  box-shadow: 4px 4px 0px 0px #000000, inset -2px -2px 0px 0px rgba(0,0,0,0.5), inset 2px 2px 0px 0px rgba(255,255,255,0.4);
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arcade-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px 0px #000000;
+}
+
+.arcade-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+.arcade-btn-yellow {
+  background: #ffe600;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.arcade-btn-cyan {
+  background: #00f0ff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.arcade-btn-magenta {
+  background: #ff007f;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Blinking arcade animation */
+@keyframes arcade-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.arcade-blink {
+  animation: arcade-blink 0.9s infinite;
+}
+
+.arcade-blink-fast {
+  animation: arcade-blink 0.45s infinite;
+}
+
+/* CRT Scanline & Phosphor screen overlay */
+.crt-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.38) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.04),
+    rgba(0, 255, 0, 0.02),
+    rgba(0, 0, 255, 0.04)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* 8-bit Pixel Grid Backdrop */
+.pixel-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 2px, transparent 2px);
+}
+
+/* Custom 8-bit Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-left: 2px solid #222222;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffe600;
+  border: 2px solid #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
